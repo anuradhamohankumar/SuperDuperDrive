@@ -36,7 +36,6 @@ public class FileService {
         }
         buffer.flush();
         byte[] fileData = buffer.toByteArray();
-
         String fileName = multipartFile.getOriginalFilename();
         String contentType = multipartFile.getContentType();
         String fileSize = String.valueOf(multipartFile.getSize());

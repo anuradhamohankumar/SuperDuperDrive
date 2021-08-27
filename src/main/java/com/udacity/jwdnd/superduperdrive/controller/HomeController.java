@@ -9,6 +9,7 @@ import com.udacity.jwdnd.superduperdrive.services.EncryptionService;
 import com.udacity.jwdnd.superduperdrive.services.FileService;
 import com.udacity.jwdnd.superduperdrive.services.NoteService;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -87,5 +88,10 @@ public class HomeController {
         model.addAttribute("result", "success");
 
         return "result";
+    }
+
+    @ExceptionHandler()
+    public String handle(IOException ex) {
+        return "error";
     }
 }
